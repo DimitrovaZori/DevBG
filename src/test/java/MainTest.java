@@ -97,16 +97,12 @@ public class MainTest {
     public void dataTable() {
 
         driver.get("https://the-internet.herokuapp.com/tables");
-        List<WebElement> edits = driver.findElements(By.xpath("//table[@id='table1']/tbody/tr/td[6]/a[href ='#edit']"));
-        for (WebElement edit : edits) {
-            System.out.println(edit.getText());
-
-        }
-
+        WebElement editFrank = driver.findElement(By.xpath("//table[@id='table1']/tbody/tr[2]/td[6]/a[1]"));
+        editFrank.click();
     }
 
-    @AfterMethod
+  /*  @AfterMethod
     public void tearDown() {
         driver.quit();
-    }
+    }*/
 }
