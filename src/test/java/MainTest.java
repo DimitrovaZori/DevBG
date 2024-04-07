@@ -88,8 +88,11 @@ public class MainTest {
 
             WebElement picker = driver.findElement(By.name("my-colors"));
             picker.click();
-            Actions moveSlider = new Actions(driver);
-            moveSlider.clickAndHold(picker).moveByOffset(100,50).perform();
+            Actions movePicker = new Actions(driver);
+            movePicker.clickAndHold();
+            WebElement hidden = driver.findElement(By.name("my-hidden"));
+            Actions moveHidden = new Actions(driver);
+            moveHidden.clickAndHold(hidden).moveByOffset(200,0).perform();
 
         }
 
@@ -101,7 +104,7 @@ public class MainTest {
         editFrank.click();
     }
 
-  /*  @AfterMethod
+   /* @AfterMethod
     public void tearDown() {
         driver.quit();
     }*/
